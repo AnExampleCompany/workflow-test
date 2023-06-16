@@ -17,6 +17,6 @@ jobs:
             ~/.gradle/wrapper
             ~/.cache/pip
           key: ${{ runner.os }}-debricked-resolution--${{ steps.get-date.outputs.date }}
-      - uses: mchdeborg/workflow/.github/workflows/scan.yml
+      - uses: ./.github/actions/scan.yml
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
