@@ -17,9 +17,6 @@ jobs:
             ~/.gradle/wrapper
             ~/.cache/pip
           key: ${{ runner.os }}-debricked-resolution--${{ steps.get-date.outputs.date }}
-      - name: Install Debricked CLI
-        run: curl -L https://github.com/debricked/cli/releases/latest/download/cli_linux_x86_64.tar.gz | tar -xz debricked
-      - name: debricked scan
-        run: ./debricked scan
+      - uses: mchdeborg/workflow/.github/workflows/scan.yml
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
