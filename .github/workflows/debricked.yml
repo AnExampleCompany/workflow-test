@@ -6,17 +6,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/Library/Caches/go-build
-            ~/go/pkg/mod
-            ~/.m2/repository
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-            ~/.cache/pip
-          key: ${{ runner.os }}-debricked-resolution--${{ steps.get-date.outputs.date }}
-      - uses: ../actions/action.yml
+      - name: Print a greeting
         env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME $DEBRICKED_TOKEN
+          
