@@ -1,4 +1,4 @@
-name: Debricked scan test v0.4
+name: Ruleset test v0.5
 
 on: pull_request
 
