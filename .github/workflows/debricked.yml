@@ -1,6 +1,7 @@
-name: Ruleset test v0.5
+name: Slabco workflow test v0.1
 
-on: pull_request
+on:
+  pull_request:
 
 jobs:
   test:
@@ -14,4 +15,3 @@ jobs:
           LAST_NAME: Octocat
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME
-          
